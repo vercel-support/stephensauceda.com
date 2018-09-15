@@ -7,6 +7,7 @@ const Index = () => (
       <title>Stephen Sauceda</title>
       <meta name="description" content="Builder of web things." />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
     </Head>
     <div className="h-card">
       <p>
