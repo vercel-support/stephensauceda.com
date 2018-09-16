@@ -8,6 +8,7 @@ import Paragraph from '../components/Paragraph'
 import Image from '../components/Image'
 import Link from '../components/Link'
 import InlineCode from '../components/InlineCode'
+import BlockQuote from '../components/Blockquote'
 
 class MyApp extends App {
   render () {
@@ -20,7 +21,8 @@ class MyApp extends App {
           code: Code,
           inlineCode: InlineCode,
           img: Image,
-          a: Link
+          a: Link,
+          blockquote: BlockQuote
         }}>
           <Component {...pageProps} />
         </MDXProvider>
