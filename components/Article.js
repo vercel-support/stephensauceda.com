@@ -7,6 +7,14 @@ const Article = ({ title }) => ({ children }) => (
     <article>
       <Head>
         <title>{title} - Stephen Sauceda</title>
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:url" content={`https://stephensauceda.com/articles/${slug}`} />
+        {imageUrl && (
+          <meta property="og:image" content={imageUrl} />
+        )}
+        <meta name="twitter:creator" content="@stephensauceda" />
+        <meta name="twitter:card" content="summary" />
       </Head>
       <Title>{title}</Title>
       {children}
