@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Title from '../components/Title'
 import Paragraph from '../components/Paragraph'
 import Timestamp from './Timestamp'
+import Footer from '../components/PageFooter'
 
 const Article = ({ title, slug, imageUrl, publishDate }) => ({ children }) => (
   <Fragment>
@@ -26,12 +27,17 @@ const Article = ({ title, slug, imageUrl, publishDate }) => ({ children }) => (
       </Paragraph>
       {children}
     </article>
+    <div>
+      <Footer/>
+    </div>
     <style jsx>{`
       article {
         max-width: 640px;
-        padding: 0 1em 3em 1em;
+        width: 90%;
+        padding: 0 1em 2em 1em;
         margin: 25vh auto 0 auto;
       }
+       { max-width: 640px; margin: 0 auto; width: 90%; }
     `}</style>
   </Fragment>
 )
