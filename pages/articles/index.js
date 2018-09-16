@@ -9,9 +9,11 @@ function sortBy(a, b) {
 }
 
 function sortByYear(articles) {
-  return [...new Set(articles.map(a => getYear(a.publishDate)))].map(year => ({
-    [year]: articles.filter(a => getYear(a.publishDate) === year)
-  }))
+  return [...new Set(articles.map(a => getYear(a.publishDate)))]
+    .sort((a, b) => b - a)
+    .map(year => ({
+      [year]: articles.filter(a => getYear(a.publishDate) === year)
+    }))
 }
 
 const Articles = () => (
