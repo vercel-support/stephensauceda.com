@@ -35,7 +35,7 @@ const Index = () => (
         <Link href="https://twitter.com/stephensauceda" rel="me" className="u-url">
           Twitter
         </Link>{' '}
-        or in real life somewhere in <span className="p-region">South Carolina</span>.
+        or in real life somewhere in <span className="p-region">South Carolina</span>. Sometimes <Link href="/articles">I type thoughts into a computer</Link> as well.
       </Paragraph>
     </div>
     <style jsx global>{`
