@@ -28,8 +28,8 @@ const Article = ({ title, slug, imageUrl, publishDate }) => ({ children }) => (
     </article>
     <style jsx>{`
       article {
-        max-width: 768px;
-        padding: 0 1em;
+        max-width: 640px;
+        padding: 0 1em 3em 1em;
         margin: 25vh auto 0 auto;
       }
     `}</style>

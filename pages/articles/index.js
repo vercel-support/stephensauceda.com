@@ -45,7 +45,7 @@ const Articles = () => (
         padding: 0;
       }
       div {
-        max-width: 768px;
+        max-width: 640px;
         width: 90%;
         margin: 25vh auto 0 auto;
       }
