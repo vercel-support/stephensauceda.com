@@ -4,7 +4,7 @@ import Title from './Title'
 
 const ArticlePreview = ({ title, slug }) => (
   <Fragment>
-      <Link href={`/articles/${slug}`} color="black" style={{ textDecoration: 'none' }}>
+      <Link href={`/a/${slug}`} color="black" style={{ textDecoration: 'none' }}>
         <Title tag="h3">{title}</Title>
       </Link>
   </Fragment>

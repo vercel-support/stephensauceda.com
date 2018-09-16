@@ -12,7 +12,7 @@ const Article = ({ title, slug, imageUrl, publishDate }) => ({ children }) => (
         <title>{title} - Stephen Sauceda</title>
         <meta property="og:type" content="article" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content={`https://stephensauceda.com/articles/${slug}`} />
+        <meta property="og:url" content={`https://stephensauceda.com/a/${slug}`} />
         {imageUrl && (
           <meta property="og:image" content={imageUrl} />
         )}

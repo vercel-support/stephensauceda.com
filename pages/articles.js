@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import getYear from 'date-fns/get_year'
-import articles from '../../data/articles.json'
-import Title from '../../components/Title'
-import ArticlePreview from '../../components/ArticlePreview'
+import articles from '../data/articles.json'
+import Title from '../components/Title'
+import ArticlePreview from '../components/ArticlePreview'
 
 function sortBy(a, b) {
   return b.publishDate - a.publishDate
