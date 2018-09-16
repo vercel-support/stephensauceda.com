@@ -1,6 +1,8 @@
 import App, {Container} from 'next/app'
+import Router from 'next/router'
 import React from 'react'
 import { MDXProvider } from '@mdx-js/tag'
+import withGA from 'next-ga'
 
 import Code from '../components/Code'
 import Title from '../components/Title'
@@ -31,4 +33,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default withGA('UA-15647519-1', Router)(MyApp)
