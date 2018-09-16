@@ -5,7 +5,8 @@ const Paragraph = ({ children, ...rest }) => (
     <p {...rest}>{children}</p>
     <style jsx>{`
       p {
-        line-height: 1.5;
+        font-size: 15px;
+        line-height: 1.6;
         font-family: Menlo, monospace;
       }
     `}</style>
