@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
 import Title from '../components/Title'
+import Paragraph from '../components/Paragraph'
+import Timestamp from './Timestamp'
 
-const Article = ({ title }) => ({ children }) => (
+const Article = ({ title, slug, imageUrl, publishDate }) => ({ children }) => (
   <Fragment>
     <article>
       <Head>
@@ -17,6 +19,11 @@ const Article = ({ title }) => ({ children }) => (
         <meta name="twitter:card" content="summary" />
       </Head>
       <Title>{title}</Title>
+      <Paragraph>
+        <small>
+          <Timestamp>{publishDate}</Timestamp>
+        </small>
+      </Paragraph>
       {children}
     </article>
     <style jsx>{`
