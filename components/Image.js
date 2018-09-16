@@ -1,12 +1,26 @@
 import React, { Fragment } from 'react'
 
-const Image = ({ src, alt }) => (
+const Image = ({ src, alt, caption }) => (
   <Fragment>
-    <img src={src} alt={alt} title={alt} />
+    <figure>
+      <img src={src} alt={alt} title={caption || alt} />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
     <style jsx>{`
+      figure {
+        margin: 0;
+      }
       img {
         width: 100%;
         max-width: 100%;
+      }
+      figcaption {
+        color: #888;
+        font-style: italic;
+        padding: .5em 0;
+        font-family: Menlo, monospace;
+        font-size: 13px;
+        text-align: center;
       }
     `}</style>
   </Fragment>
