@@ -10,7 +10,13 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta httpEquiv="Content-Language" content="en" />
+          <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/normalize.css@8.0.0/normalize.css"
+          />
         </Head>
         <body>
           <Main />
