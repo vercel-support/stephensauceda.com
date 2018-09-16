@@ -1,36 +1,58 @@
 import React, { Fragment } from 'react'
+import getYear from 'date-fns/get_year'
 import articles from '../../data/articles.json'
-import Timestamp from '../../components/Timestamp'
-import Paragraph from '../../components/Paragraph'
+import Title from '../../components/Title'
+import ArticlePreview from '../../components/ArticlePreview'
 
 function sortBy(a, b) {
   return b.publishDate - a.publishDate
 }
 
-function renderArticlePreview({ title, slug, publishDate }) {
-  return (
-    <li key={slug}>
-      <a href={`/articles/${slug}`}>
-        <h1>{title}</h1>
-      </a>
-      <Paragraph>
-        <small>
-          <Timestamp>{publishDate}</Timestamp>
-        </small>
-      </Paragraph>
-      <style jsx>{`
-        h1 { font-size: 1.5em; }
-        a { color: black; }
-      `}</style>
-    </li>
-  )
+function sortByYear(articles) {
+  return [...new Set(articles.map(a => getYear(a.publishDate)))].map(year => ({
+    [year]: articles.filter(a => getYear(a.publishDate) === year)
+  }))
 }
 
 const Articles = () => (
   <Fragment>
-    <ul>{articles.sort(sortBy).map(renderArticlePreview)}</ul>
+    <div>
+      {sortByYear(articles).map(collection =>
+        Object.entries(collection).map(([key, value]) => (
+          <section key={key}>
+            <Title tag="h2">{key}</Title>
+            <ul>
+              {value.sort(sortBy).map(article => (
+                <li key={article.slug}>
+                  <ArticlePreview {...article} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      )}
+    </div>
+    <style jsx global>{`
+      #__next {
+        height: 100%;
+      }
+    `}</style>
     <style jsx>{`
-      ul { list-style: none; }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      div {
+        max-width: 768px;
+        width: 90%;
+        margin: 25vh auto 0 auto;
+      }
+      section {
+        margin-bottom: 2em;
+      }
+      li {
+        padding: 0 0.5em;
+      }
     `}</style>
   </Fragment>
 )
