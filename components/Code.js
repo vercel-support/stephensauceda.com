@@ -1,15 +1,18 @@
 import React, { Fragment } from 'react'
-export default ({ children }) => (
-    <code>
-      {children}
-      <style jsx>{`
-      code {
-        background-color: black;
-        color: red;
-        padding: .5em;
-        display: block;
-        width: 100%;
-      }
-    `}</style>
-    </code>
+import ReactSyntaxHighlighter from 'react-syntax-highlighter'
+import { tomorrowNight } from 'react-syntax-highlighter/styles/hljs'
+
+const getProps = className => {
+  const props = { style: tomorrowNight }
+
+  if (className) {
+    const string = className.slice('language-'.length)
+    return Object.assign({}, props, {language: string})
+  }
+
+  return props
+}
+
+export default ({ children, className }) => (
+  <ReactSyntaxHighlighter {...getProps(className)}>{children}</ReactSyntaxHighlighter>
 )
