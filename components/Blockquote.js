@@ -4,7 +4,7 @@ import Paragraph from './Paragraph'
 const Blockquote = ({ children }) => (
   <Fragment>
     <blockquote>
-      <Paragraph>{children}</Paragraph>
+      {children}
     </blockquote>
     <style jsx>{`
       blockquote {
