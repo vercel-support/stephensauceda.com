@@ -3,6 +3,7 @@ import getYear from 'date-fns/get_year'
 import articles from '../data/articles.json'
 import Title from '../components/Title'
 import ArticlePreview from '../components/ArticlePreview'
+import Error from 'next/error'
 
 function sortBy(a, b) {
   return b.publishDate - a.publishDate
@@ -16,7 +17,7 @@ function sortByYear(articles) {
     }))
 }
 
-const Articles = () => (
+const Articles = () => articles.length < 1 ? <Error statusCode={404} /> : (
   <Fragment>
     <div>
       {sortByYear(articles).map(collection =>

@@ -42,7 +42,7 @@ const Index = () => (
             Twitter
           </Link>{' '}
           or in real life somewhere in <span className="p-region">South Carolina</span>.
-          Sometimes <Link href="/articles">I type thoughts into a computer</Link> as well.
+          {/* Sometimes <Link href="/articles">I type thoughts into a computer</Link> as well. */}
         </Paragraph>
       </div>
     </div>
