@@ -11,6 +11,8 @@ import Image from '../components/Image'
 import Link from '../components/Link'
 import InlineCode from '../components/InlineCode'
 import BlockQuote from '../components/Blockquote'
+import List from '../components/List'
+import ListItem from '../components/ListItem'
 
 class MyApp extends App {
   render () {
@@ -20,11 +22,18 @@ class MyApp extends App {
         <MDXProvider components={{
           p: Paragraph,
           h1: Title,
+          h2: props => <Title tag="h2" {...props} />,
+          h3: props => <Title tag="h3" {...props} />,
+          h4: props => <Title tag="h4" {...props} />,
+          h5: props => <Title tag="h5" {...props} />,
           code: Code,
           inlineCode: InlineCode,
           img: Image,
           a: Link,
-          blockquote: BlockQuote
+          blockquote: BlockQuote,
+          ul: props => <List tag="ul" {...props} />,
+          ol: props => <List tag="ol" {...props} />,
+          li: ListItem
         }}>
           <Component {...pageProps} />
         </MDXProvider>
