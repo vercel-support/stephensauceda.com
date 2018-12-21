@@ -1,5 +1,8 @@
 {
   "name": "stephensauceda.com",
   "alias": "stephensauceda.com",
-  "type": "static"
+  "version": 2,
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" }
+  ]
 }
