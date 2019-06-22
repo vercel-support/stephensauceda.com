@@ -73,7 +73,7 @@ const Index = () => (
       p {
         font-size: 15px;
         line-height: 1.6;
-        font-family: Menlo, monospace;
+        font-family: 'Fira Sans', sans-serif;
       }
       a {
         color: #e67e22;

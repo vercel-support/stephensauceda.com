@@ -7,7 +7,7 @@ const PageFooter = () => (
       <small>Copyright &copy; {`${getYear(Date.now())}`} Stephen Sauceda</small>
     </footer>
     <style jsx>{`
-      footer { padding: 1em 0; font-family: Menlo, monospace; }
+      footer { padding: 1em 0; font-family: 'Fira Sans', sans-serif; }
     `}</style>
   </Fragment>
 )
