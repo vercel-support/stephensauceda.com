@@ -4,8 +4,6 @@
   "description": "",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "export": "next export",
     "start": "next",
     "test": "NODE_ENV=test jest --watchAll"
   },
@@ -18,5 +16,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@testing-library/react": "^8.0.1",
+    "jest": "^24.8.0"
+  }
 }
