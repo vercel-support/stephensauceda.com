@@ -25,15 +25,6 @@ export default class MyDocument extends Document {
             <NextScript />
           </body>
         </html>
-        <style jsx global>{`
-          html,
-          body {
-            height: 100%;
-          }
-          body {
-            font-family: Menlo monospace;
-          }
-        `}</style>
       </Fragment>
     )
   }

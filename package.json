@@ -13,26 +13,10 @@
   "author": "Stephen Sauceda <contact@stephensauceda.com> (https://stephensauceda.com/)",
   "license": "MIT",
   "dependencies": {
-    "@mdx-js/loader": "^0.15.2",
-    "@mdx-js/mdx": "^0.15.2",
-    "@mdx-js/tag": "^0.15.0",
-    "@zeit/next-mdx": "^1.1.0",
     "date-fns": "^1.29.0",
-    "express": "^4.16.3",
-    "next": "^7.0.2",
-    "next-ga": "^2.3.1",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-syntax-highlighter": "^8.0.1",
-    "remark-emoji": "^2.0.1",
-    "title": "^3.3.2"
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
-  "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "jest": "^23.6.0"
-  }
+  "devDependencies": {}
 }
