@@ -10,5 +10,11 @@
       "API_ENDPOINT": "@api_endpoint",
       "ACCESS_TOKEN": "@access_token"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/notes/(?<uid>[^/]+)",
+      "dest": "/notes/show?n=$uid"
+    }
+  ]
 }

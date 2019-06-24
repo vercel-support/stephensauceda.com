@@ -16,7 +16,8 @@
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^1.0.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "title": "^3.4.1"
   },
   "devDependencies": {
     "@testing-library/react": "^8.0.1",
