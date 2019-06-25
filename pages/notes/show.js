@@ -22,7 +22,7 @@ const ShowNotes = ({ doc }) => {
         </Heading>
         <RelativeDate
           date={doc.data.publish_date}
-          timeProps={{ datetime: doc.data.publish_date, className: 'dt-published' }}
+          timeProps={{ dateTime: doc.data.publish_date, className: 'dt-published' }}
         />
         <div className="e-content">{renderSlices(doc.data.body)}</div>
       </article>
@@ -43,7 +43,7 @@ const styles = css`
   .Note,
   .footerWrap {
     width: 90%;
-    max-width: 640px;
+    max-width: 500px;
     margin: 0 auto;
   }
 

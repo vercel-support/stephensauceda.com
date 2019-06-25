@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
 import { FONT_FAMILY } from '../lib/constants'
 
-const List = props => (
+const List = ({ listType, ...props }) => (
   <Fragment>
-    <props.listType {...props}>{props.children}</props.listType>
+    {listType === 'ul' ? <ul { ...props } /> : <ol { ...props } />}
     <style jsx global>{styles}</style>
   </Fragment>
 )

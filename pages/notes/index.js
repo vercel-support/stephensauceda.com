@@ -1,23 +1,33 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
 import { RichText } from 'prismic-reactjs'
+import parse from 'date-fns/parse'
+import format from 'date-fns/format'
 import { getAllOfType } from '../../lib/api'
 import Footer from '../../components/PageFooter'
-import linkResolver from '../../lib/linkResolver';
+import Heading from '../../components/Heading'
+import HyperLink from '../../components/HyperLink'
+import linkResolver from '../../lib/linkResolver'
 
 const Notes = ({ notes }) => (
   <Fragment>
     <div className="pageWrapper">
       <div className="cardWrapper">
-        {notes.map(n => (<h2><a href={linkResolver(n)}>{RichText.asText(n.data.title)}</a></h2>))}
+        {notes.map(n => (
+          <Heading level="h2">
+            <span>
+              {format(parse(n.data.publish_date), 'MM.DD.YY')}
+            </span>
+            <HyperLink className="black" href={linkResolver(n)}>
+              {RichText.asText(n.data.title)}
+            </HyperLink>
+          </Heading>
+        ))}
       </div>
     </div>
     <div className="footerWrapper">
       <Footer />
     </div>
-    <style jsx global>
-      {globalStyles}
-    </style>
     <style jsx>{styles}</style>
   </Fragment>
 )
@@ -29,10 +39,11 @@ Notes.getInitialProps = async ({ req }) => {
 
 const styles = css`
   .pageWrapper {
-    height: calc(100vh - 5em);
+    min-height: calc(100vh - 10em);
+    padding-top: 5em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   .cardWrapper,
@@ -42,27 +53,8 @@ const styles = css`
     padding: 1em;
     margin: 0 auto;
   }
-  .cardWrapper {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`
-
-const globalStyles = css.global`
-  p {
-    font-size: 15px;
-    line-height: 1.6;
-    font-family: 'Fira Sans', sans-serif;
-  }
-  a {
-    color: #e67e22;
-  }
-
-  a:visited,
-  a:hover {
-    color: #d35400;
+  span {
+    margin-right: .5em;
   }
 `
 
