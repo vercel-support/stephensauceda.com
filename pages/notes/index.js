@@ -15,9 +15,7 @@ const Notes = ({ notes }) => (
       <div className="cardWrapper">
         {notes.map(n => (
           <Heading level="h2">
-            <span>
-              {format(parse(n.data.publish_date), 'MM.DD.YY')}
-            </span>
+            <span>{format(parse(n.data.publish_date), 'MM.DD.YY')}</span>
             <HyperLink className="black" href={linkResolver(n)}>
               {RichText.asText(n.data.title)}
             </HyperLink>
@@ -54,7 +52,7 @@ const styles = css`
     margin: 0 auto;
   }
   span {
-    margin-right: .5em;
+    margin-right: 0.5em;
   }
 `
 

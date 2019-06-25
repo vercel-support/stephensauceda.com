@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
+import Error from 'next/error'
 import css from 'styled-jsx/css'
 import { RichText } from 'prismic-reactjs'
 import title from 'title'
@@ -10,28 +11,32 @@ import PageFooter from '../../components/PageFooter'
 import renderSlices from '../../lib/renderSlices'
 
 const ShowNotes = ({ doc }) => {
-  const postTitle = title(RichText.asText(doc.data.title))
-  return (
-    <Fragment>
-      <Head>
-        <title>{postTitle} | Stephen Sauceda</title>
-      </Head>
-      <article className="Note h-entry">
-        <Heading level="h1" className="p-name">
-          {postTitle}
-        </Heading>
-        <RelativeDate
-          date={doc.data.publish_date}
-          timeProps={{ dateTime: doc.data.publish_date, className: 'dt-published' }}
-        />
-        <div className="e-content">{renderSlices(doc.data.body)}</div>
-      </article>
-      <div className="footerWrap">
-        <PageFooter />
-      </div>
-      <style jsx>{styles}</style>
-    </Fragment>
-  )
+  if (doc) {
+    const postTitle = title(RichText.asText(doc.data.title))
+    return (
+      <Fragment>
+        <Head>
+          <title>{postTitle} | Stephen Sauceda</title>
+        </Head>
+        <article className="Note h-entry">
+          <Heading level="h1" className="p-name">
+            {postTitle}
+          </Heading>
+          <RelativeDate
+            date={doc.data.publish_date}
+            timeProps={{ dateTime: doc.data.publish_date, className: 'dt-published' }}
+          />
+          <div className="e-content">{renderSlices(doc.data.body)}</div>
+        </article>
+        <div className="footerWrap">
+          <PageFooter />
+        </div>
+        <style jsx>{styles}</style>
+      </Fragment>
+    )
+  }
+
+  return <Error statusCode={404} />
 }
 
 ShowNotes.getInitialProps = async ({ req, query }) => {
