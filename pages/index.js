@@ -60,7 +60,7 @@ const globalStyles = css.global`
   p {
     font-size: 15px;
     line-height: 1.6;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   }
   a {
     color: #e67e22;

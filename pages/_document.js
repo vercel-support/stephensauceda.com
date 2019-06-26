@@ -19,7 +19,6 @@ export default class MyDocument extends Document {
               rel="stylesheet"
               href="https://unpkg.com/normalize.css@8.0.0/normalize.css"
             />
-            <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700&display=swap" rel="stylesheet" />
           </Head>
           <body>
             <Main />
