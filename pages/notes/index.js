@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 import { RichText } from 'prismic-reactjs'
 import parse from 'date-fns/parse'
 import format from 'date-fns/format'
-import { getAllOfType } from '../../lib/api'
+import { getPosts } from '../../lib/api'
 import Footer from '../../components/PageFooter'
 import Heading from '../../components/Heading'
 import HyperLink from '../../components/HyperLink'
@@ -31,7 +31,7 @@ const Notes = ({ notes }) => (
 )
 
 Notes.getInitialProps = async ({ req }) => {
-  const notes = await getAllOfType(req, 'post', {
+  const notes = await getPosts(req, 'post', {
     orderings: '[my.post.publish_date desc]',
     fetch: ['post.title', 'post.publish_date'],
     pageSize: 10
