@@ -31,7 +31,11 @@ const Notes = ({ notes }) => (
 )
 
 Notes.getInitialProps = async ({ req }) => {
-  const notes = await getAllOfType(req, 'post')
+  const notes = await getAllOfType(req, 'post', {
+    orderings: '[my.post.publish_date desc]',
+    fetch: ['post.title', 'post.publish_date'],
+    pageSize: 10
+  })
   return { notes }
 }
 
