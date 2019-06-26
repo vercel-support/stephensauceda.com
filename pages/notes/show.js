@@ -4,11 +4,17 @@ import Error from 'next/error'
 import css from 'styled-jsx/css'
 import { RichText } from 'prismic-reactjs'
 import title from 'title'
+import isFuture from 'date-fns/is_future'
+import parse from 'date-fns/parse'
 import { getByUID } from '../../lib/api'
 import Heading from '../../components/Heading'
 import RelativeDate from '../../components/RelativeDate'
 import PageFooter from '../../components/PageFooter'
 import renderSlices from '../../lib/renderSlices'
+
+function isFuturePost(dateString) {
+  return isFuture(parse(dateString))
+}
 
 const ShowNotes = ({ doc }) => {
   if (doc) {
@@ -17,6 +23,9 @@ const ShowNotes = ({ doc }) => {
       <Fragment>
         <Head>
           <title>{postTitle} | Stephen Sauceda</title>
+          {isFuturePost(doc.data.publish_date) && (
+            <meta name="robots" content="noindex, follow" />
+          )}
         </Head>
         <article className="Note h-entry">
           <Heading level="h1" className="p-name">
