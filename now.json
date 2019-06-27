@@ -13,8 +13,23 @@
   },
   "routes": [
     {
+      "src": "/",
+      "headers": {
+        "cache-control": "s-maxage=2592000, max-age=0"
+      }
+    },
+    {
+      "src": "/notes",
+      "headers": {
+        "cache-control": "s-maxage=3600, max-age=0"
+      }
+    },
+    {
       "src": "/notes/(?<uid>[^/]+)",
-      "dest": "/notes/show?n=$uid"
+      "dest": "/notes/show?n=$uid",
+      "headers": {
+        "cache-control": "s-maxage=3600, max-age=0"
+      }
     }
   ]
 }
