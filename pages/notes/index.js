@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Head from 'next/head'
 import css from 'styled-jsx/css'
 import { RichText } from 'prismic-reactjs'
 import parse from 'date-fns/parse'
@@ -11,6 +12,9 @@ import linkResolver from '../../lib/linkResolver'
 
 const Notes = ({ notes }) => (
   <Fragment>
+    <Head>
+      <meta name="robots" content="noindex, follow" />
+    </Head>
     <div className="pageWrapper">
       <div className="cardWrapper">
         {notes.map(n => (

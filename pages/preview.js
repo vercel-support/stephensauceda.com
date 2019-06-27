@@ -1,4 +1,5 @@
 import React, { Component } from 'React'
+import Head from 'next/head'
 import Router, { withRouter } from 'next/router'
 import linkResolver from '../lib/linkResolver'
 import { getAPI } from '../lib/api'
@@ -16,7 +17,14 @@ class Preview extends Component {
   }
 
   render() {
-    return <p>Loading preview...</p>
+    return (
+      <div>
+        <Head>
+          <meta name="robots" content="noindex, follow" />
+        </Head>
+        <p>Loading preview...</p>
+      </div>
+    )
   }
 }
 
