@@ -3,6 +3,7 @@ import Head from 'next/head'
 import css from 'styled-jsx/css'
 import { getSingle } from '../lib/api'
 import Footer from '../components/PageFooter'
+import { FONT_FAMILY } from '../lib/constants'
 
 const Index = ({ doc }) => (
   <Fragment>
@@ -60,7 +61,7 @@ const globalStyles = css.global`
   p {
     font-size: 15px;
     line-height: 1.6;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: ${FONT_FAMILY};
   }
   a {
     color: #e67e22;

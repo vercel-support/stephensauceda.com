@@ -7,15 +7,14 @@ class Preview extends Component {
   componentDidMount = () => {
     this.preview()
   }
-  
+
   preview = async () => {
     const api = await getAPI()
-    api.previewSession(this.props.router.query.token, linkResolver)
-      .then(url => {
-        Router.push(url);
-      });
+    api.previewSession(this.props.router.query.token, linkResolver).then(url => {
+      Router.push(url)
+    })
   }
-  
+
   render() {
     return <p>Loading preview...</p>
   }

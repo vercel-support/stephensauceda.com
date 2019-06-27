@@ -4,8 +4,10 @@ import { FONT_FAMILY } from '../lib/constants'
 
 const List = ({ listType, ...props }) => (
   <Fragment>
-    {listType === 'ul' ? <ul { ...props } /> : <ol { ...props } />}
-    <style jsx global>{styles}</style>
+    {listType === 'ul' ? <ul {...props} /> : <ol {...props} />}
+    <style jsx global>
+      {styles}
+    </style>
   </Fragment>
 )
 
