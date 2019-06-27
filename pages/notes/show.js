@@ -40,6 +40,7 @@ const ShowNotes = ({ doc }) => {
         <div className="footerWrap">
           <PageFooter />
         </div>
+        <style global>{globalStyles}</style>
         <style jsx>{styles}</style>
       </Fragment>
     )
@@ -64,6 +65,12 @@ const styles = css`
   .Note {
     padding-top: 5em;
     padding-bottom: 5em;
+  }
+`
+
+const globalStyles = css.global`
+  img {
+    width: 100%;
   }
 `
 
