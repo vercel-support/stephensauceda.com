@@ -1,6 +1,7 @@
 import React from 'react'
 import css from 'styled-jsx/css'
 import HyperLink from './HyperLink'
+import clsx from 'clsx'
 import { FONT_FAMILY } from '../lib/constants'
 
 const Author = () => (
@@ -11,7 +12,7 @@ const Author = () => (
       width={50}
       height={50}
     />
-    <HyperLink rel="author" className="black" href="/">
+    <HyperLink rel="author" className={clsx('black', 'p-author', 'h-card')} href="/">
       <strong><small>Stephen Sauceda</small></strong>
     </HyperLink>
     <style jsx>{styles}</style>
