@@ -9,6 +9,7 @@ const Author = () => (
     <img
       src="/static/me.jpg"
       alt="A photo of me (Stephen Sauceda)"
+      className="u-photo"
       width={50}
       height={50}
     />
