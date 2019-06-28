@@ -6,11 +6,15 @@ import { RichText } from 'prismic-reactjs'
 import title from 'title'
 import isFuture from 'date-fns/is_future'
 import parse from 'date-fns/parse'
+import clsx from 'clsx'
 import { getByUID } from '../../lib/api'
 import Heading from '../../components/Heading'
 import RelativeDate from '../../components/RelativeDate'
 import PageFooter from '../../components/PageFooter'
 import renderSlices from '../../lib/renderSlices'
+import Paragraph from '../../components/Paragraph'
+import HyperLink from '../../components/HyperLink'
+import linkResolver from '../../lib/linkResolver'
 
 function isFuturePost(dateString) {
   return isFuture(parse(dateString))
@@ -31,10 +35,19 @@ const ShowNotes = ({ doc }) => {
           <Heading level="h1" className="p-name">
             {postTitle}
           </Heading>
-          <RelativeDate
-            date={doc.data.publish_date}
-            timeProps={{ dateTime: doc.data.publish_date, className: 'dt-published' }}
-          />
+          <Paragraph>
+            <small>
+              <HyperLink className={clsx('grey', 'u-url')} href={linkResolver(doc)}>
+                <RelativeDate
+                  date={doc.data.publish_date}
+                  timeProps={{
+                    dateTime: doc.data.publish_date,
+                    className: 'dt-published'
+                  }}
+                />
+              </HyperLink>
+            </small>
+          </Paragraph>
           <div className="e-content">{renderSlices(doc.data.body)}</div>
         </article>
         <div className="footerWrap">

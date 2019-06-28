@@ -25,6 +25,15 @@ const styles = css`
   .black:hover {
     color: ${COLORS.primary};
   }
+
+  .grey {
+    color: ${COLORS.secondary};
+    border-bottom: none;
+  }
+
+  .grey:hover {
+    color: #000;
+  }
 `
 
 export default HyperLink
