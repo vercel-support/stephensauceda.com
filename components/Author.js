@@ -30,7 +30,6 @@ const styles = css`
 
   img {
     width: auto;
-    max-width: auto;
     border-radius: 50%;
     display: inline-block;
     margin-right: 0.5em;
