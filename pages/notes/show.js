@@ -14,6 +14,7 @@ import PageFooter from '../../components/PageFooter'
 import renderSlices from '../../lib/renderSlices'
 import Paragraph from '../../components/Paragraph'
 import HyperLink from '../../components/HyperLink'
+import Author from '../../components/Author'
 import linkResolver from '../../lib/linkResolver'
 
 function isFuturePost(dateString) {
@@ -49,6 +50,9 @@ const ShowNotes = ({ doc }) => {
             </small>
           </Paragraph>
           <div className="e-content">{renderSlices(doc.data.body)}</div>
+          <footer>
+            <Author />
+          </footer>
         </article>
         <div className="footerWrap">
           <PageFooter />

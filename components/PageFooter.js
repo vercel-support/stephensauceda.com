@@ -8,7 +8,7 @@ const PageFooter = () => (
     <footer>
       <small>
         Copyright &copy; {`${getYear(Date.now())}`}{' '}
-        <HyperLink href="/" rel="author" className="black">
+        <HyperLink href="/" className="black">
           Stephen Sauceda
         </HyperLink>
       </small>
