@@ -37,6 +37,11 @@ export default class MyDocument extends Document {
               rel="stylesheet"
               href="https://unpkg.com/normalize.css@8.0.0/normalize.css"
             />
+            <link
+              rel="webmention"
+              href="https://webmention.io/stephensauceda.com/webmention"
+            />
+            <link rel="pingback" href="https://webmention.io/stephensauceda.com/xmlrpc" />
           </Head>
           <body>
             <Main />
