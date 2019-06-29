@@ -28,9 +28,6 @@ const ShowNotes = ({ doc }) => {
       <Fragment>
         <Head>
           <title>{postTitle} | Stephen Sauceda</title>
-          {isFuturePost(doc.data.publish_date) && (
-            <meta name="robots" content="noindex, follow" />
-          )}
         </Head>
         <article className="Note h-entry">
           <Heading level="h1" className="p-name">
