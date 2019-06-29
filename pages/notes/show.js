@@ -40,9 +40,9 @@ const ShowNotes = ({ doc }) => {
             <small>
               <HyperLink className={clsx('grey', 'u-url')} href={linkResolver(doc)}>
                 <RelativeDate
-                  date={doc.data.publish_date}
+                  date={doc.first_publication_date}
                   timeProps={{
-                    dateTime: doc.data.publish_date,
+                    dateTime: doc.first_publication_date,
                     className: 'dt-published'
                   }}
                 />
