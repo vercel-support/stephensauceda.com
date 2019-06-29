@@ -14,12 +14,8 @@
   },
   "routes": [
     {
-      "src": "/rss/(.*)",
-      "dest": "/rss/$1"
-    },
-    {
       "src": "/",
-      "continue": true,
+      "dest": "www/",
       "headers": {
         "cache-control": "s-maxage=2592000, max-age=0"
       }
@@ -32,9 +28,24 @@
       }
     },
     {
+      "src": "/notes",
+      "dest": "www/notes"
+    },
+    {
       "src": "/notes/(?<uid>[^/]+)",
       "dest": "www/notes/show?n=$uid"
     },
-    { "src": "/(.*)", "dest": "/www/$1" }
+    {
+      "src": "/rss",
+      "dest": "/rss/all.js"
+    },
+    {
+      "src": "/rss/tags/.*",
+      "dest": "rss/tags.js",
+      "headers": {
+        "cache-control": "s-maxage=3600, max-age=0"
+      }
+    },
+    { "src": "/(.*)", "dest": "/www/404" }
   ]
 }
