@@ -3,7 +3,8 @@
   "alias": "stephensauceda.com",
   "version": 2,
   "builds": [
-    { "src": "next.config.js", "use": "@now/next" }
+    { "src": "www/next.config.js", "use": "@now/next" },
+    { "src": "rss/*.js", "use": "@now/node" }
   ],
   "build": {
     "env": {
@@ -13,23 +14,27 @@
   },
   "routes": [
     {
+      "src": "/rss/(.*)",
+      "dest": "/rss/$1"
+    },
+    {
       "src": "/",
+      "continue": true,
       "headers": {
         "cache-control": "s-maxage=2592000, max-age=0"
       }
     },
     {
-      "src": "/notes",
+      "src": "/notes.*",
+      "continue": true,
       "headers": {
         "cache-control": "s-maxage=3600, max-age=0"
       }
     },
     {
       "src": "/notes/(?<uid>[^/]+)",
-      "dest": "/notes/show?n=$uid",
-      "headers": {
-        "cache-control": "s-maxage=3600, max-age=0"
-      }
-    }
+      "dest": "www/notes/show?n=$uid"
+    },
+    { "src": "/(.*)", "dest": "/www/$1" }
   ]
 }

@@ -19,7 +19,7 @@ const Notes = ({ notes }) => (
     <div className="pageWrapper">
       <div className="cardWrapper">
         {notes.map(n => (
-          <Heading level="h2">
+          <Heading key={n.id} level="h2">
             <span>{format(parse(n.first_publication_date), 'MM.DD.YY')}</span>
             <HyperLink className="black" href={linkResolver(n)}>
               {RichText.asText(n.data.title)}
