@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Head from 'next/head'
 import Router, { withRouter } from 'next/router'
 import linkResolver from '../../lib/linkResolver'
-import { getAPI } from '../../lib/api'
+import { getAPI } from '../../../lib/api'
 
 class Preview extends Component {
   componentDidMount = () => {
