@@ -4,8 +4,6 @@ import Error from 'next/error'
 import css from 'styled-jsx/css'
 import { RichText } from 'prismic-reactjs'
 import title from 'title'
-import isFuture from 'date-fns/is_future'
-import parse from 'date-fns/parse'
 import clsx from 'clsx'
 import { getByUID } from '../../lib/api'
 import Heading from '../../components/Heading'
@@ -16,10 +14,6 @@ import Paragraph from '../../components/Paragraph'
 import HyperLink from '../../components/HyperLink'
 import Author from '../../components/Author'
 import linkResolver from '../../lib/linkResolver'
-
-function isFuturePost(dateString) {
-  return isFuture(parse(dateString))
-}
 
 const ShowNotes = ({ doc }) => {
   if (doc) {
