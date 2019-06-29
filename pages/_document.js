@@ -20,11 +20,13 @@ export default class MyDocument extends Document {
                 />
                 <script
                   dangerouslySetInnerHTML={{
-                    __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments)}
-              gtag('js', new Date());
+                    __html: `
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments)}
+                      gtag('js', new Date());
 
-              gtag('config', 'UA-15647519-1');`
+                      gtag('config', 'UA-15647519-1');
+                    `
                   }}
                 />
               </Fragment>
