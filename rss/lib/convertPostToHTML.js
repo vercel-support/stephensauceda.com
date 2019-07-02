@@ -35,7 +35,7 @@ function formatSlices(slices) {
       default:
         return null
     }
-  }).join(',')
+  }).join('')
 }
 
 module.exports = convertPostToHTML
