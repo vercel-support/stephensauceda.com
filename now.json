@@ -41,10 +41,7 @@
     },
     {
       "src": "/rss/tags/.*",
-      "dest": "rss/tags.js",
-      "headers": {
-        "cache-control": "s-maxage=3600, max-age=0"
-      }
+      "dest": "rss/tags.js"
     },
     { "src": "/(.*)", "dest": "/www/404" }
   ]

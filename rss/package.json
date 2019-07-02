@@ -4,5 +4,9 @@
   "engines": {
     "node": "10.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ms": "^2.1.2",
+    "rss": "^1.2.2"
+  }
 }
