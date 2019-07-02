@@ -43,6 +43,6 @@
       "src": "/rss/tags/.*",
       "dest": "rss/tags.js"
     },
-    { "src": "/(.*)", "dest": "/www/404" }
+    { "src": "/(.*)", "dest": "/www/$1" }
   ]
 }
