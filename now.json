@@ -6,6 +6,10 @@
     { "src": "www/next.config.js", "use": "@now/next" },
     { "src": "rss/*.js", "use": "@now/node" }
   ],
+  "env": {
+    "API_ENDPOINT": "@api_endpoint",
+    "ACCESS_TOKEN": "@access_token"
+  },
   "build": {
     "env": {
       "API_ENDPOINT": "@api_endpoint",
@@ -36,12 +40,11 @@
       "dest": "www/notes/show?n=$uid"
     },
     {
-      "src": "/rss",
-      "dest": "/rss/all.js"
-    },
-    {
-      "src": "/rss/tags/.*",
-      "dest": "rss/tags.js"
+      "src": "/rss.*",
+      "dest": "/rss/index.js",
+      "headers": {
+        "cache-control": "s-maxage=7200, max-age=0"
+      }
     },
     { "src": "/(.*)", "dest": "/www/$1" }
   ]

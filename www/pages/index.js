@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
 import css from 'styled-jsx/css'
-import { getSingle } from '../../lib/api'
+import { getSingle } from '../lib/api'
 import Footer from '../components/PageFooter'
 import { FONT_FAMILY } from '../lib/constants'
 

@@ -2,6 +2,17 @@
 # yarn lockfile v1
 
 
+cross-fetch@^2.2.0:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.3.tgz#e8a0b3c54598136e037f8650f8e823ccdfac198e"
+  dependencies:
+    node-fetch "2.1.2"
+    whatwg-fetch "2.0.4"
+
+escape-html@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
+
 mime-db@~1.25.0:
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.25.0.tgz#c18dbd7c73a5dbf6f44a024dc0d165a1e7b1c392"
@@ -12,9 +23,43 @@ mime-types@2.1.13:
   dependencies:
     mime-db "~1.25.0"
 
-ms@^2.1.2:
+node-fetch@2.1.2:
   version "2.1.2"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
+
+prismic-dom@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/prismic-dom/-/prismic-dom-2.1.0.tgz#a614d371e3895be454f06473ed3c3e59bf1340df"
+  dependencies:
+    escape-html "1.0.3"
+    prismic-helpers "^1.0.0"
+    prismic-richtext "^0.4.2"
+
+prismic-helpers@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/prismic-helpers/-/prismic-helpers-1.0.0.tgz#8337420cf187f55fb7b7a8be755523c8696fc329"
+
+prismic-javascript@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/prismic-javascript/-/prismic-javascript-2.0.3.tgz#085da0c332e1903bd79a59b3afbb2b5d5c6fabbd"
+  dependencies:
+    cross-fetch "^2.2.0"
+    promise-polyfill "8.0.0"
+
+prismic-richtext@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/prismic-richtext/-/prismic-richtext-0.4.2.tgz#bdc27d2c3d0e8e2226918b7ad2708fd3ac3d1e7f"
+  dependencies:
+    ramda "^0.25.0"
+    uuid "^3.1.0"
+
+promise-polyfill@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.0.0.tgz#b47c7fc74052cc5b2132b703cca144f1a5eb56ef"
+
+ramda@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
 
 rss@^1.2.2:
   version "1.2.2"
@@ -22,6 +67,14 @@ rss@^1.2.2:
   dependencies:
     mime-types "2.1.13"
     xml "1.0.1"
+
+uuid@^3.1.0:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+
+whatwg-fetch@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 
 xml@1.0.1:
   version "1.0.1"

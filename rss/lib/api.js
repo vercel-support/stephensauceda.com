@@ -44,11 +44,13 @@ async function getByUID(req, uid) {
   }
 }
 
-async function getPosts(req, options = {}) {
+async function getPosts(req, tags = [], options = {}) {
   try {
     const API = await getAPI(req)
-    const document = await API.query(
+    const document = await API.query([
       Prismic.Predicates.at('document.type', 'post'),
+      Prismic.Predicates.at('document.tags', tags)
+    ],
       options
     )
     return document.results

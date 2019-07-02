@@ -4,7 +4,7 @@ import css from 'styled-jsx/css'
 import { RichText } from 'prismic-reactjs'
 import parse from 'date-fns/parse'
 import format from 'date-fns/format'
-import { getPosts } from '../../../lib/api'
+import { getPosts } from '../../lib/api'
 import Footer from '../../components/PageFooter'
 import Heading from '../../components/Heading'
 import HyperLink from '../../components/HyperLink'
@@ -36,7 +36,7 @@ const Notes = ({ notes }) => (
 )
 
 Notes.getInitialProps = async ({ req }) => {
-  const notes = await getPosts(req, {
+  const notes = await getPosts(req, [], {
     orderings: '[document.first_publication_date desc]',
     fetch: ['post.title'],
     pageSize: 10
