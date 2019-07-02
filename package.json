@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "prismic-javascript": "^2.0.3"
+  },
+  "devDependencies": {
+    "@stephensauceda/eslint-config": "^11.0.3",
+    "eslint": "^6.0.1"
+  }
+}

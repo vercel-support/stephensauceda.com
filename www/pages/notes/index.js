@@ -14,7 +14,7 @@ const Notes = ({ notes }) => (
   <Fragment>
     <Head>
       <title>Notes | Stephen Sauceda</title>
-      <meta name="description" content="Some things written by Stephen Sauceda."/>
+      <meta name="description" content="Some things written by Stephen Sauceda." />
     </Head>
     <div className="pageWrapper">
       <div className="cardWrapper">
