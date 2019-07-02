@@ -1,6 +1,6 @@
 const DOM = require('prismic-dom')
 
-function convertPostToHTML(post) {
+function convertPostToFeedItem(post) {
   return {
     title: DOM.RichText.asText(post.data.title),
     url: `https://stephensauceda.com/notes/${post.uid}`,
@@ -38,4 +38,4 @@ function formatSlices(slices) {
   }).join('')
 }
 
-module.exports = convertPostToHTML
+module.exports = convertPostToFeedItem
