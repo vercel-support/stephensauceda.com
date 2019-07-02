@@ -36,7 +36,7 @@ const Notes = ({ notes }) => (
 )
 
 Notes.getInitialProps = async ({ req }) => {
-  const notes = await getPosts(req, 'post', {
+  const notes = await getPosts(req, {
     orderings: '[document.first_publication_date desc]',
     fetch: ['post.title'],
     pageSize: 10
