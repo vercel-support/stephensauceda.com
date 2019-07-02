@@ -4,5 +4,5 @@ module.exports = url =>
   URL.parse(url)
     .pathname
     .split('/')
-    .filter(p => Boolean(p))
+    .filter(Boolean)
     .filter(p => p !== 'rss')
