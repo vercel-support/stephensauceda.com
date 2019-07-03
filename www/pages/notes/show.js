@@ -14,14 +14,25 @@ import Paragraph from '../../components/Paragraph'
 import HyperLink from '../../components/HyperLink'
 import Author from '../../components/Author'
 import linkResolver from '../../lib/linkResolver'
+import { getFirstImageUrl, getFirstSentence } from '../../lib/postHelpers'
 
 const ShowNotes = ({ doc }) => {
   if (doc) {
     const postTitle = title(RichText.asText(doc.data.title))
+    const postUrl = linkResolver(doc)
     return (
       <Fragment>
         <Head>
           <title>{postTitle} | Stephen Sauceda</title>
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@stephensauceda" />
+          <meta name="twitter:creator" content="@stephensauceda" />
+          <meta property="og:title" content={postTitle} />
+          <meta property="og:url" content={`https://stephensauceda.com${postUrl}`} />
+          <meta property="og:image" content={getFirstImageUrl(doc.data.body)} />
+          <meta name="og:description" content={getFirstSentence(doc.data.body)} />
+          <meta property="og:site_name" content="Stephen Sauceda" />
+          <meta property="og:type" content="article" />
         </Head>
         <article className="Note h-entry">
           <Heading level="h1" className="p-name">
@@ -29,7 +40,7 @@ const ShowNotes = ({ doc }) => {
           </Heading>
           <Paragraph>
             <small>
-              <HyperLink className={clsx('grey', 'u-url')} href={linkResolver(doc)}>
+              <HyperLink className={clsx('grey', 'u-url')} href={postUrl}>
                 <RelativeDate
                   date={doc.first_publication_date}
                   timeProps={{
