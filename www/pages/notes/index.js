@@ -5,10 +5,12 @@ import { RichText } from 'prismic-reactjs'
 import parse from 'date-fns/parse'
 import format from 'date-fns/format'
 import { getPosts } from '../../lib/api'
+import { PAGE_SIZE } from '../../lib/constants'
+import linkResolver from '../../lib/linkResolver'
 import Footer from '../../components/PageFooter'
 import Heading from '../../components/Heading'
 import HyperLink from '../../components/HyperLink'
-import linkResolver from '../../lib/linkResolver'
+import NotesPagination from '../../components/NotesPagination'
 
 const Notes = ({ notes }) => (
   <Fragment>
@@ -26,6 +28,8 @@ const Notes = ({ notes }) => (
             </HyperLink>
           </Heading>
         ))}
+
+        <NotesPagination resultsLength={notes.length} />
       </div>
     </div>
     <div className="footerWrapper">
@@ -35,11 +39,12 @@ const Notes = ({ notes }) => (
   </Fragment>
 )
 
-Notes.getInitialProps = async ({ req }) => {
+Notes.getInitialProps = async ({ req, query }) => {
   const notes = await getPosts(req, [], {
     orderings: '[document.first_publication_date desc]',
     fetch: ['post.title'],
-    pageSize: 10
+    pageSize: PAGE_SIZE,
+    page: query.page || 1
   })
   return { notes }
 }

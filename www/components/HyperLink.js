@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
 
-import { COLORS } from '../lib/constants'
+import { COLORS, FONT_FAMILY } from '../lib/constants'
 
 const HyperLink = props => (
   <Fragment>
@@ -15,6 +15,7 @@ const styles = css`
     color: ${COLORS.primary};
     text-decoration: none;
     border-bottom: 1px dotted ${COLORS.primary};
+    font-family: ${FONT_FAMILY}
   }
 
   .black {
