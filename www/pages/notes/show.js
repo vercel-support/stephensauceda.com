@@ -24,7 +24,7 @@ const ShowNotes = ({ doc }) => {
       <Fragment>
         <Head>
           <title>{postTitle} | Stephen Sauceda</title>
-          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@stephensauceda" />
           <meta name="twitter:creator" content="@stephensauceda" />
           <meta property="og:title" content={postTitle} />
