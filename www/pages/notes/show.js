@@ -30,7 +30,7 @@ const ShowNotes = ({ doc }) => {
           <meta property="og:title" content={postTitle} />
           <meta property="og:url" content={`https://stephensauceda.com${postUrl}`} />
           <meta property="og:image" content={getFirstImageUrl(doc.data.body)} />
-          <meta name="og:description" content={getFirstSentence(doc.data.body)} />
+          <meta property="og:description" content={getFirstSentence(doc.data.body)} />
           <meta property="og:site_name" content="Stephen Sauceda" />
           <meta property="og:type" content="article" />
         </Head>
