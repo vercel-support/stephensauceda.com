@@ -4,3 +4,4 @@ __tests__
 *.test.js
 .env.build
 .env
+.vscode
