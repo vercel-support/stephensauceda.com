@@ -3,8 +3,14 @@
   "alias": "stephensauceda.com",
   "version": 2,
   "builds": [
-    { "src": "www/next.config.js", "use": "@now/next" },
-    { "src": "rss/*.js", "use": "@now/node" }
+    {
+      "src": "www/next.config.js",
+      "use": "@now/next"
+    },
+    {
+      "src": "rss/*.js",
+      "use": "@now/node"
+    }
   ],
   "env": {
     "API_ENDPOINT": "@api_endpoint",
@@ -18,10 +24,10 @@
   },
   "routes": [
     {
-      "src": "/",
-      "dest": "www/",
+      "src": "/rss.*",
+      "dest": "/rss/index.js",
       "headers": {
-        "cache-control": "s-maxage=2592000, max-age=0"
+        "cache-control": "s-maxage=7200, max-age=0"
       }
     },
     {
@@ -32,20 +38,19 @@
       }
     },
     {
-      "src": "/notes",
-      "dest": "www/notes"
-    },
-    {
       "src": "/notes/(?<uid>[^/]+)",
       "dest": "www/notes/show?n=$uid"
     },
     {
-      "src": "/rss.*",
-      "dest": "/rss/index.js",
+      "src": "/",
+      "continue": true,
       "headers": {
-        "cache-control": "s-maxage=7200, max-age=0"
+        "cache-control": "s-maxage=2592000, max-age=0"
       }
     },
-    { "src": "/(.*)", "dest": "/www/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "/www/$1"
+    }
   ]
 }
