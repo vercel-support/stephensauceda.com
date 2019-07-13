@@ -69,6 +69,7 @@ const ShowNotes = ({ doc }) => {
 }
 
 ShowNotes.getInitialProps = async ({ req, query }) => {
+  console.log(query)
   const doc = await getByUID(req, query.n)
   return { doc }
 }
